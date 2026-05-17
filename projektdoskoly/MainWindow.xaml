@@ -1,0 +1,38 @@
+﻿<Window x:Class="MathPracticeApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Procvičování Matematiky - SŠ" Height="450" Width="600"
+        WindowStartupLocation="CenterScreen" Background="#F0F4F8">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+            <RadioButton x:Name="RbAlgebra" Content="Algebra (Rovnice)" IsChecked="True" Margin="0,0,20,0" FontSize="16" Checked="CategoryChanged"/>
+            <RadioButton x:Name="RbGeometrie" Content="Geometrie" FontSize="16" Checked="CategoryChanged"/>
+        </StackPanel>
+
+       
+        <Border Grid.Row="1" Background="White" CornerRadius="10" Padding="20">
+            <TextBlock x:Name="TxtZadani" FontSize="24" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Vyberte kategorii a začněte."/>
+        </Border>
+
+        
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,20">
+            <TextBlock Text="Váš výsledek:" FontSize="18" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox x:Name="TxtOdpoved" Width="100" FontSize="18" TextAlignment="Center" Padding="5" KeyDown="TxtOdpoved_KeyDown"/>
+            <Button Content="Zkontrolovat" Width="120" FontSize="16" Margin="10,0,0,0" Click="BtnZkontrolovat_Click" Background="#0078D7" Foreground="White"/>
+        </StackPanel>
+
+        
+        <StackPanel Grid.Row="3" HorizontalAlignment="Center">
+            <TextBlock x:Name="TxtVysledek" FontSize="18" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+            <Button Content="Další příklad" Width="150" FontSize="16" Click="BtnDalsi_Click" Padding="5"/>
+        </StackPanel>
+    </Grid>
+</Window>
